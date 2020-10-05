@@ -6,65 +6,111 @@
     android:layout_height="match_parent"
     android:background="#2D302F">
 
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="306dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="56dp"
-        android:hint="Возраст"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailuser" />
 
-    <EditText
-        android:id="@+id/surname"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_age"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="306dp"
         android:layout_height="51dp"
         android:layout_marginTop="60dp"
-        android:hint="Фамилия"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        tools:ignore="InvalidId,MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/ti_emailuser">
 
-    <EditText
-        android:id="@+id/name"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/age"
+            android:hint="Возраст"
+            android:layout_width="306dp"
+            android:layout_height="51dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ti_emailuser"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_surname"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="306dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ti_name">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/surname"
+            android:hint="Фамилия"
+            android:layout_width="306dp"
+            android:layout_height="51dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ti_name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="306dp"
         android:layout_height="51dp"
         android:layout_marginTop="112dp"
-        android:hint="Имя"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/emailuser"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name"
+            android:hint="Имя"
+            android:layout_width="306dp"
+            android:layout_height="51dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_emailuser"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="306dp"
         android:layout_height="51dp"
         android:layout_marginTop="60dp"
-        android:hint="Email"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/surname"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/ti_surname">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/emailuser"
+            android:hint="Email"
+            android:layout_width="306dp"
+            android:layout_height="51dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ti_surname"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login_button"
@@ -79,7 +125,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/ti_age"
         app:layout_constraintVertical_bias="0.037" />
 
 
