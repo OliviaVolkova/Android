@@ -14,19 +14,19 @@ class MainActivity : AppCompatActivity() {
         var clientName : String = intent.getStringExtra("name") ?: ""
         var clientSurname : String = intent.getStringExtra("surname") ?: ""
         name.text = "$clientName $clientSurname"
-        age.text = intent.getStringExtra("age") ?: ""
+        ti_age.text = intent.getStringExtra("age") ?: ""
         email.text = intent.getStringExtra("email") ?: ""
         var fl = true
 
         editName.setText(name.text)
-        editAge.setText(age.text)
+        editAge.setText(ti_age.text)
         editEmail.setText(email.text)
 
         editButton.setOnClickListener {
             if(fl) {
 
                 editAge.visibility = View.VISIBLE
-                age.visibility = View.INVISIBLE
+                ti_age.visibility = View.INVISIBLE
 
                 editName.visibility = View.VISIBLE
                 name.visibility = View.INVISIBLE
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 editEmail.visibility = View.VISIBLE
                 email.visibility = View.INVISIBLE
 
-                age.text = editAge.text.toString()
+                ti_age.text = editAge.text.toString()
                 name.text = editName.text.toString()
                 email.text = editEmail.text.toString()
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 editAge.visibility = View.INVISIBLE
-                age.visibility = View.VISIBLE
+                ti_age.visibility = View.VISIBLE
 
                 editName.visibility = View.INVISIBLE
                 name.visibility = View.VISIBLE
@@ -50,7 +50,8 @@ class MainActivity : AppCompatActivity() {
                 editEmail.visibility = View.INVISIBLE
                 email.visibility = View.VISIBLE
 
-                age.text = editAge.text.toString()
+
+                ti_age.text = editAge.text.toString()
                 name.text = editName.text.toString()
                 email.text = editEmail.text.toString()
                 fl = true
