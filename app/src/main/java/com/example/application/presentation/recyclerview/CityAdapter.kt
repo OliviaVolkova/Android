@@ -1,4 +1,4 @@
-package com.example.application.recyclerview
+package com.example.application.presentation.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,19 +7,20 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.application.City
+import com.example.application.data.entities.WeatherInCity
 import com.example.application.R
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.activity_detail_information.*
 
 class CityAdapter(
     private val itemClick: (Int) -> Unit,
-) :ListAdapter<City, CityAdapter.CityViewHolder>
-    (object : DiffUtil.ItemCallback<City>() {
-    override fun areItemsTheSame(oldItem: City, newItem: City): Boolean = oldItem.id == newItem.id
-    override fun areContentsTheSame(oldItem: City, newItem: City): Boolean = oldItem == newItem
+) :ListAdapter<WeatherInCity, CityAdapter.CityViewHolder>
+    (object : DiffUtil.ItemCallback<WeatherInCity>() {
+    override fun areItemsTheSame(oldItem: WeatherInCity, newItem: WeatherInCity): Boolean = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: WeatherInCity, newItem: WeatherInCity): Boolean = oldItem == newItem
 }) {
     inner class CityViewHolder(override val containerView: View, private val itemClick: (Int) -> Unit) : LayoutContainer, RecyclerView.ViewHolder(containerView) {
-        fun bind(city: City) {
+        fun bind(city: WeatherInCity) {
             itemView.setOnClickListener {
                 itemClick.invoke(city.id)
             }
@@ -48,7 +49,7 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolde
 override fun onBindViewHolder(holder: CityViewHolder, position: Int) =
     holder.bind(getItem(position))
 
-override fun submitList(list: MutableList<City>?) {
+override fun submitList(list: MutableList<WeatherInCity>?) {
     super.submitList(list?.let { ArrayList(it) })
 }
 }

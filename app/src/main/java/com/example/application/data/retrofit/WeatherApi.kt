@@ -1,5 +1,7 @@
-package com.example.application
+package com.example.application.data.retrofit
 
+import com.example.application.data.entities.Weather
+import com.example.application.data.entities.WeatherList
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -16,5 +18,5 @@ interface WeatherApi {
 
     @GET("find?lang=ru")
     suspend fun getWeatherByGeo(
-        @Query("lat") latitude : Double, @Query("lon") longitude: Double, @Query("cnt") count: Int):WeatherList
+        @Query("lat") latitude : Double, @Query("lon") longitude: Double, @Query("cnt") count: Int): WeatherList
 }

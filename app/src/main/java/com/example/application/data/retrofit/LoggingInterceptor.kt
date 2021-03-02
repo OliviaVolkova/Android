@@ -1,5 +1,6 @@
-package com.example.application
+package com.example.application.data.retrofit
 
+import com.example.application.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
